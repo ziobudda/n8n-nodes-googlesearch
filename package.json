@@ -4,26 +4,38 @@
   "description": "n8n node for Google Search API without Python dependency",
   "keywords": [
     "n8n-community-node-package",
-    "google-search"
+    "google-search",
+    "search",
+    "google",
+    "api",
+    "n8n"
   ],
-  "license": "MIT",
+  "license": "MPL-2.0",
   "homepage": "https://github.com/ziobuddalabs/n8n-google-search",
   "author": {
-    "name": "ZioBudda Labs",
-    "email": "info@ziobuddalabs.com"
+    "name": "Michel Morelli",
+    "email": "info@ziobuddalabs.com",
+    "url": "https://ziobuddalabs.com"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ziobuddalabs/n8n-google-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ziobuddalabs/n8n-google-search/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "main": "index.js",
   "scripts": {
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "lint": "eslint ./nodes/GoogleSearch/**/*.ts ./credentials/**/*.ts package.json",
+    "lintfix": "eslint ./nodes/GoogleSearch/**/*.ts ./credentials/**/*.ts package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js ./nodes/GoogleSearch/**/*.ts ./credentials/**/*.ts package.json",
+    "prepare-publish": "npm run build && npm run lint"
   },
   "files": [
     "dist"

@@ -1,55 +1,55 @@
-# Guida alla configurazione del motore di ricerca personalizzato Google (CX)
+# Google Custom Search Engine ID (CX) Guide
 
-## Cos'è il parametro CX?
+## What is a Custom Search Engine ID (CX)?
 
-Il parametro CX (Custom Search Engine ID) è l'identificatore univoco del tuo motore di ricerca personalizzato Google. È necessario per utilizzare l'API Google Custom Search.
+The CX parameter is a unique identifier for your Google Custom Search Engine. It is required to use the Google Custom Search API.
 
-## Come ottenere un ID motore di ricerca personalizzato (CX)
+## How to Create a Custom Search Engine and Get a CX ID
 
-### Passo 1: Creare un motore di ricerca personalizzato
+### Step 1: Create a Custom Search Engine
 
-1. Vai su [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
-2. Clicca su "Crea un motore di ricerca"
-3. Configura il tuo motore di ricerca:
-   - **Nome**: Dai un nome al tuo motore di ricerca
-   - **Siti da cercare**: Puoi scegliere "Ricerca nell'intero web" o limitare la ricerca a siti specifici
-   - **Lingua**: Scegli la lingua preferita
-   - **Ricerca per immagini**: Abilita se vuoi cercare anche immagini
+1. Go to [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
+2. Click on "Create a search engine"
+3. Configure your search engine:
+   - **Name**: Give your search engine a name
+   - **Sites to search**: You can choose "Search the entire web" or limit to specific sites
+   - **Language**: Choose your preferred language
+   - **Search image search**: Enable if you want to search for images as well
 
-4. Clicca su "Crea"
+4. Click "Create"
 
-### Passo 2: Trovare l'ID del motore di ricerca (CX)
+### Step 2: Find the Search Engine ID (CX)
 
-1. Dopo aver creato il motore di ricerca, sarai reindirizzato alla dashboard
-2. Clicca sul tuo motore di ricerca appena creato
-3. Vai alla sezione "Configurazione base"
-4. Cerca "ID motore di ricerca" o "Search engine ID"
-5. Copia il valore - avrà un formato simile a: `012345678901234567890:abcdefghijk`
+1. After creating the search engine, you'll be redirected to the dashboard
+2. Click on your newly created search engine
+3. Go to "Basic Settings"
+4. Look for "Search engine ID" or "cx"
+5. Copy this value - it will look something like: `012345678901234567890:abcdefghijk`
 
-### Passo 3: Configurare le credenziali in n8n
+### Step 3: Configure Credentials in n8n
 
-1. Vai su Impostazioni > Credenziali in n8n
-2. Crea una nuova credenziale di tipo "Google Search API"
-3. Inserisci:
-   - **API Key**: La tua chiave API di Google Cloud
-   - **Custom Search Engine ID**: L'ID CX che hai copiato nel passo precedente
-4. Salva le credenziali
+1. Go to Settings > Credentials in n8n
+2. Create a new credential of type "Google Search API"
+3. Enter:
+   - **API Key**: Your Google Cloud API key
+   - **Custom Search Engine ID**: The CX value you copied in Step 2
+4. Save the credentials
 
-## Risoluzione dei problemi CX
+## Troubleshooting CX Issues
 
-Se ricevi un errore "Google Search API error: Request failed with status code 400", verifica:
+If you receive "Google Search API error: Request failed with status code 400", check:
 
-1. **CX vuoto o non valido**: Assicurati che l'ID del motore di ricerca sia stato inserito correttamente
-2. **Formato CX errato**: Il CX dovrebbe avere un formato specifico (es. `012345678901234567890:abcdefghijk`)
-3. **Motore di ricerca non attivo**: Assicurati che il tuo motore di ricerca sia attivo nella dashboard di Google Programmable Search
+1. **Empty or invalid CX**: Make sure the Custom Search Engine ID was entered correctly
+2. **CX format**: The CX should have a specific format (e.g., `012345678901234567890:abcdefghijk`)
+3. **Search engine not active**: Ensure your search engine is active in the Google Programmable Search dashboard
 
-## Configurazione avanzata del motore di ricerca
+## Advanced Search Engine Configuration
 
-Per ottimizzare i risultati di ricerca, puoi:
+To optimize search results, you can:
 
-1. **Personalizzare i siti da includere**: Limita la ricerca a domini specifici
-2. **Configurare sinonimi**: Migliora i risultati di ricerca con sinonimi personalizzati
-3. **Escludere termini**: Filtra i risultati per escludere contenuti indesiderati
-4. **Personalizzare l'ordinamento**: Modifica l'ordine predefinito dei risultati
+1. **Customize included sites**: Limit search to specific domains
+2. **Configure synonyms**: Improve search results with custom synonyms
+3. **Exclude terms**: Filter results to exclude unwanted content
+4. **Customize ranking**: Modify the default order of results
 
-Tutte queste configurazioni possono essere fatte tramite la dashboard di Google Programmable Search Engine.
+All these configurations can be done through the Google Programmable Search Engine dashboard.
